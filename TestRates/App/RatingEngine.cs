@@ -20,7 +20,7 @@ namespace TestRating.App
             this.logger = logger;
         }
         public decimal Rating { get; set; }
-        public void Rate()
+        public void Rate(string filePath)
         {
             // log start rating
             logger.Info("Starting rate.");
@@ -28,7 +28,7 @@ namespace TestRating.App
             logger.Info("Loading policy.");
 
             // load policy - open file policy.json
-            string policyJson = File.ReadAllText("policy.json");
+            string policyJson = File.ReadAllText(filePath);
 
 
             var policy = JsonConvert.DeserializeObject<Policy>(policyJson,

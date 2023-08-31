@@ -22,7 +22,8 @@ namespace TestRating
  
 
             var engine = new RatingEngine(logger);
-            engine.Rate();
+            string filePath = "Infrastructure/policy.json";
+            engine.Rate(filePath);
 
             if (engine.Rating > 0)
             {
